@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Executive & Technical Portfolio of Steev Thankachan — Operations & Hospitality Leader, MERN Stack Developer, Software QA Tester, B2B/B2C Sales Strategist, and Academic Content Writer based in Calicut, India." />
+  <meta property="og:title" content="Steev Thankachan | Executive & Technical Portfolio" />
+  <meta property="og:description" content="Bridging Operations Leadership, Full-Stack MERN Engineering, Software QA, Strategic B2B/B2C Sales, and Technical Authorship." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#050511" />
+  <title>Steev Thankachan | Executive & Technical Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #050511;
+      --bg-surface: rgba(16, 18, 42, 0.72);
+      --bg-surface-hover: rgba(26, 29, 68, 0.9);
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+      --border-glass: rgba(255, 255, 255, 0.12);
+      --violet: #8b5cf6;
+      --cyan: #06b6d4;
+      --pink: #ec4899;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --blue: #3b82f6;
+      --grad-rainbow: linear-gradient(135deg, #ec4899 0%, #8b5cf6 35%, #06b6d4 70%, #10b981 100%);
+      --grad-hot: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
+      --grad-cyber: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+    }
+
+    body.light-theme {
+      --bg-deep: #f4f6fb;
+      --bg-surface: rgba(255, 255, 255, 0.88);
+      --bg-surface-hover: rgba(255, 255, 255, 0.98);
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-dim: #64748b;
+      --border-glass: rgba(99, 102, 241, 0.22);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Interactive Particle Canvas */
+    #particleCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Morphing Aurora Background Blobs */
+    .aurora-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .aurora-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(95px);
+      opacity: 0.42;
+      animation: floatAurora 16s infinite alternate ease-in-out;
+    }
+
+    body.light-theme .aurora-blob {
+      opacity: 0.22;
+    }
+
+    .blob-1 {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, #ec4899, #8b5cf6);
+      top: -120px;
+      right: -100px;
+      animation-duration: 14s;
+    }
+
+    .blob-2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #06b6d4, #3b82f6);
+      top: 38%;
+      left: -140px;
+      animation-duration: 18s;
+      animation-delay: -4s;
+    }
+
+    .blob-3 {
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, #10b981, #f59e0b);
+      bottom: -120px;
+      right: 15%;
+      animation-duration: 20s;
+      animation-delay: -8s;
+    }
+
+    @keyframes floatAurora {
+      0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      50% { transform: translate(50px, -40px) scale(1.12) rotate(12deg); }
+      100% { transform: translate(-35px, 50px) scale(0.94) rotate(-12deg); }
+    }
+
+    /* Cursor Glow Follower (Desktop Pointer Only) */
+    #cursorGlow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.07) 40%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+      display: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      #cursorGlow {
+        display: block;
+      }
+    }
+
+    /* Sticky Glass Navbar (Flexbox) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(8, 10, 28, 0.8);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    body.light-theme header {
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .nav-container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      min-width: 0;
+      flex-shrink: 0;
+    }
+
+    .brand-logo span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-avatar-wrap {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      padding: 2.5px;
+      background: var(--grad-rainbow);
+      background-size: 200% 200%;
+      animation: gradientShift 4s ease infinite;
+      box-shadow: 0 0 18px rgba(236, 72, 153, 0.45);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .nav-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      background: #fff;
+      display: block;
+    }
+
+    .nav-status-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #10b981;
+      border: 2px solid #050511;
+    }
+
+    body.light-theme .nav-status-dot {
+      border-color: #ffffff;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.92rem;
+      position: relative;
+      padding: 4px 0;
+      white-space: nowrap;
+      transition: color 0.25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2.5px;
+      background: var(--grad-rainbow);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    body.light-theme .nav-links a:hover {
+      color: var(--violet);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .icon-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 9px 13px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--cyan);
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.35);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.15rem;
+      padding: 8px 12px;
+    }
+
+    /* Mobile Navigation Drawer (Flexbox) */
+    .mobile-nav-drawer {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem 1.25rem;
+      background: rgba(8, 10, 28, 0.96);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    body.light-theme .mobile-nav-drawer {
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .mobile-nav-drawer.open {
+      display: flex;
+    }
+
+    .mobile-nav-drawer a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    body.light-theme .mobile-nav-drawer a {
+      background: rgba(15, 23, 42, 0.04);
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      flex: 1;
+    }
+
+    /* HERO SECTION (100% Responsive Flexbox) */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+    }
+
+    .hero-left {
+      flex: 1 1 460px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-visual {
+      flex: 0 1 360px;
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+      max-width: 100%;
+    }
+
+    body.light-theme .status-pill {
+      color: #059669;
+      background: rgba(16, 185, 129, 0.12);
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulseRing 1.8s infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.25rem, 5vw, 4.1rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .gradient-text {
+      background: var(--grad-rainbow);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 4s linear infinite;
+    }
+
+    .typewriter-box {
+      font-size: clamp(1.05rem, 2.2vw, 1.55rem);
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 1.25rem;
+      min-height: 2.4rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 3px;
+      height: 1.3em;
+      background: var(--pink);
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .btn-Neon {
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #fff;
+      background: var(--grad-rainbow);
+      background-size: 200% 200%;
+      animation: gradientShift 4s ease infinite;
+      box-shadow: 0 10px 30px -5px rgba(236, 72, 153, 0.55);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-Neon:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 35px -3px rgba(6, 182, 212, 0.7);
+    }
+
+    .btn-Glass {
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-main);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-Glass:hover {
+      transform: translateY(-3px);
+      border-color: var(--pink);
+      box-shadow: 0 8px 25px rgba(236, 72, 153, 0.25);
+    }
+
+    /* Animated 3D Hero Identity Card */
+    .identity-orb-card {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 30px;
+      padding: 3px;
+      background: var(--grad-rainbow);
+      background-size: 300% 300%;
+      animation: gradientShift 6s ease infinite, floatCard 6s ease-in-out infinite;
+      box-shadow: 0 25px 65px -12px rgba(139, 92, 246, 0.55);
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .identity-inner {
+      background: radial-gradient(circle at top, #171b42 0%, #090b20 75%);
+      border-radius: 27px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    body.light-theme .identity-inner {
+      background: radial-gradient(circle at top, #eef2ff 0%, #ffffff 75%);
+    }
+
+    .hero-photo-container {
+      position: relative;
+      width: 164px;
+      height: 164px;
+      margin: 0 auto 1rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .hero-photo-spinning-glow {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: var(--grad-rainbow);
+      filter: blur(12px);
+      opacity: 0.75;
+      animation: spinSlow 8s linear infinite;
+    }
+
+    .avatar-ring {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 5px;
+      background: var(--grad-rainbow);
+      background-size: 200% 200%;
+      animation: gradientShift 4s ease infinite;
+      box-shadow: 0 12px 35px rgba(236, 72, 153, 0.45);
+    }
+
+    .hero-portrait-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      background: #ffffff;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-photo-container:hover .hero-portrait-img {
+      transform: scale(1.05);
+    }
+
+    .verified-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 2px solid #090b20;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    body.light-theme .verified-badge {
+      border-color: #ffffff;
+    }
+
+    .photo-upload-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      background: rgba(6, 182, 212, 0.16);
+      border: 1px solid rgba(6, 182, 212, 0.45);
+      color: #22d3ee;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: all 0.25s ease;
+    }
+
+    body.light-theme .photo-upload-btn {
+      color: #0284c7;
+      background: rgba(6, 182, 212, 0.12);
+    }
+
+    .photo-upload-btn:hover {
+      background: var(--grad-rainbow);
+      color: #fff;
+      border-color: transparent;
+      transform: scale(1.04);
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .floating-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.15rem;
+      width: 100%;
+    }
+
+    .mini-tag {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 99px;
+      background: rgba(139, 92, 246, 0.16);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: #c4b5fd;
+      white-space: nowrap;
+    }
+
+    body.light-theme .mini-tag {
+      color: #5b21b6;
+    }
+
+    /* Animated Stats Bar (Responsive Flexbox) */
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin: 2rem 0 3.5rem;
+      width: 100%;
+    }
+
+    .stat-card {
+      flex: 1 1 220px;
+      min-width: 0;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      border-radius: 22px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--grad-rainbow);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--cyan);
+    }
+
+    .stat-number {
+      font-size: 2.25rem;
+      font-weight: 900;
+      font-family: 'Outfit', sans-serif;
+      background: var(--grad-rainbow);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Infinite Glowing Marquee Ticker */
+    .marquee-wrapper {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 1.1rem 0;
+      background: rgba(139, 92, 246, 0.08);
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+      margin-bottom: 4.5rem;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      animation: marqueeScroll 28s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 1.8rem;
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      letter-spacing: 0.03em;
+    }
+
+    .marquee-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--grad-rainbow);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Section Headers */
+    section {
+      margin-bottom: 5rem;
+      scroll-margin-top: 95px;
+      width: 100%;
+    }
+
+    .section-head {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 5px 12px;
+      border-radius: 8px;
+      background: rgba(236, 72, 153, 0.15);
+      color: #f472b6;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 0.35rem;
+    }
+
+    /* Universal Flexbox Layouts for Cards */
+    .flex-grid-2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .flex-grid-2 > .tilt-card {
+      flex: 1 1 calc(50% - 0.75rem);
+      min-width: 290px;
+    }
+
+    .flex-grid-3 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .flex-grid-3 > .tilt-card {
+      flex: 1 1 calc(33.333% - 1rem);
+      min-width: 270px;
+    }
+
+    .flex-grid-4 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.15rem;
+      width: 100%;
+    }
+
+    .flex-grid-4 > .tilt-card {
+      flex: 1 1 calc(25% - 0.9rem);
+      min-width: 220px;
+    }
+
+    .tilt-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 1.85rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform-style: preserve-3d;
+      transition: transform 0.2s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tilt-card:hover {
+      border-color: rgba(236, 72, 153, 0.55);
+      box-shadow: 0 20px 45px -15px rgba(139, 92, 246, 0.35);
+    }
+
+    /* Colored Top Accent Ribbons */
+    .accent-violet { border-top: 4px solid var(--violet); }
+    .accent-cyan { border-top: 4px solid var(--cyan); }
+    .accent-pink { border-top: 4px solid var(--pink); }
+    .accent-emerald { border-top: 4px solid var(--emerald); }
+    .accent-amber { border-top: 4px solid var(--amber); }
+
+    .icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.15rem;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .bg-grad-1 { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
+    .bg-grad-2 { background: linear-gradient(135deg, #06b6d4, #10b981); }
+    .bg-grad-3 { background: linear-gradient(135deg, #f59e0b, #ec4899); }
+    .bg-grad-4 { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.65rem;
+    }
+
+    .card-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .chip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    body.light-theme .chip {
+      background: rgba(99, 102, 241, 0.08);
+    }
+
+    /* Filter Buttons (Flexbox) */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border-radius: 13px;
+      border: 1px solid var(--border-glass);
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--grad-rainbow);
+      color: #fff;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -4px rgba(236, 72, 153, 0.5);
+    }
+
+    /* Experience Timeline Cards */
+    .exp-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .exp-item {
+      transition: all 0.35s ease;
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 0.75rem;
+      width: 100%;
+    }
+
+    .year-badge {
+      padding: 5px 13px;
+      border-radius: 99px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      background: var(--grad-cyber);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+    }
+
+    .year-badge.current {
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.45);
+    }
+
+    .role-heading {
+      font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .company-highlight {
+      background: var(--grad-hot);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .bullet-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    /* Animated Skill Progress Bars */
+    .skill-bar-wrap {
+      margin-bottom: 1.15rem;
+      width: 100%;
+    }
+
+    .skill-bar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .skill-track {
+      width: 100%;
+      height: 10px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    body.light-theme .skill-track {
+      background: rgba(15, 23, 42, 0.1);
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: var(--grad-rainbow);
+      background-size: 200% 100%;
+      animation: gradientShift 3s linear infinite;
+      width: 0%;
+      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease-out, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Contact Section Executive Profile Banner (Flexbox) */
+    .contact-header-flex {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    .contact-avatar-ring {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      padding: 3.5px;
+      background: var(--grad-rainbow);
+      background-size: 200% 200%;
+      animation: gradientShift 4s ease infinite;
+      box-shadow: 0 10px 28px rgba(6, 182, 212, 0.4);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .contact-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      background: #ffffff;
+      display: block;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.15rem;
+      margin-top: 1.75rem;
+      width: 100%;
+    }
+
+    .contact-box {
+      flex: 1 1 220px;
+      min-width: 0;
+      padding: 1.35rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      text-align: left;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    body.light-theme .contact-box {
+      background: rgba(15, 23, 42, 0.03);
+    }
+
+    .contact-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--cyan);
+      background: rgba(6, 182, 212, 0.1);
+      box-shadow: 0 14px 30px -8px rgba(6, 182, 212, 0.3);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-glass);
+      padding: 2.25rem 1.25rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.86rem;
+      margin-top: auto;
+    }
+
+    /* Tablet & Mobile Responsive Breakpoints */
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero {
+        padding-top: 2rem;
+        text-align: center;
+      }
+      .hero-left {
+        align-items: center;
+      }
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .typewriter-box, .cta-group, .contact-header-flex {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        padding: 0 0.9rem;
+        height: 68px;
+      }
+      .brand-logo {
+        font-size: 1rem;
+        gap: 8px;
+      }
+      .nav-avatar-wrap {
+        width: 38px;
+        height: 38px;
+      }
+      .print-btn-text {
+        display: none;
+      }
+      .tilt-card {
+        padding: 1.4rem;
+        border-radius: 20px;
+      }
+      .btn-Neon, .btn-Glass {
+        width: 100%;
+      }
+      .flex-grid-2 > .tilt-card,
+      .flex-grid-3 > .tilt-card,
+      .flex-grid-4 > .tilt-card,
+      .stat-card,
+      .contact-box {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+    }
+
+    @media print {
+      header, #particleCanvas, .aurora-wrap, #cursorGlow, .filter-bar, .photo-upload-btn, .mobile-nav-drawer {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .tilt-card, .stat-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hidden File Input so clicking the photo frame loads any image format regardless of size -->
+  <input type="file" id="photoInput" accept="image/*" style="display: none;" />
+
+  <!-- Animated Aurora Mesh Blobs -->
+  <div class="aurora-wrap">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
+  <!-- Interactive Particle Network Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Cursor Spotlight Glow -->
+  <div id="cursorGlow"></div>
+
+  <!-- Sticky Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo" onclick="triggerPhotoPicker(event)" title="Click to set or change photo">
+        <div class="nav-avatar-wrap">
+          <img alt="Steev Thankachan" class="portfolio-photo nav-avatar-img" />
+          <span class="nav-status-dot"></span>
+        </div>
+        <span>Steev Thankachan</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#domains">Domains</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#freelance">Freelance & Logistics</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" title="Switch Theme">
+          <span id="themeIcon">☀️</span> <span id="themeLabel">Light</span>
+        </button>
+        <button class="icon-btn" onclick="window.print()" title="Print or Save as PDF">
+          <span>🖨️</span> <span class="print-btn-text">Print / PDF</span>
+        </button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Responsive Mobile Slide-Down Drawer -->
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+      <a href="#domains" class="mobile-nav-link"><span>Domains</span><span>→</span></a>
+      <a href="#experience" class="mobile-nav-link"><span>Work Experience</span><span>→</span></a>
+      <a href="#freelance" class="mobile-nav-link"><span>Freelance & Logistics</span><span>→</span></a>
+      <a href="#skills" class="mobile-nav-link"><span>Technical & Admin Skills</span><span>→</span></a>
+      <a href="#education" class="mobile-nav-link"><span>Education & Languages</span><span>→</span></a>
+      <a href="#contact" class="mobile-nav-link"><span>Contact Details</span><span>→</span></a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span>Currently Hotel Manager @ RK Residency • Calicut, India</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Steev Thankachan</span>
+        </h1>
+
+        <!-- Animated Typewriter Role Rotator -->
+        <div class="typewriter-box">
+          <span>⚡</span>
+          <span id="typewriterText">Operations & Hospitality Leader</span>
+          <span class="cursor-blink"></span>
+        </div>
+
+        <p class="hero-desc">
+          Multidisciplinary professional combining a <strong>Computer Science Engineering</strong> foundation with high-impact leadership across hotel & office operations, <strong>MERN stack web development</strong>, software QA testing, B2B/B2C enterprise sales, and zero-plagiarism academic authorship.
+        </p>
+
+        <div class="cta-group">
+          <a href="#contact" class="btn-Neon">🚀 Let's Work Together</a>
+          <a href="#experience" class="btn-Glass">💼 View 6+ Career Roles</a>
+          <a href="https://linkedin.com/in/steev-thankachan" target="_blank" rel="noopener" class="btn-Glass">🔗 LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <!-- Animated 3D Identity Card with Executive Portrait -->
+      <div class="hero-visual">
+        <div class="identity-orb-card tilt-card">
+          <div class="identity-inner">
+            <div class="hero-photo-container" onclick="document.getElementById('photoInput').click()" title="Click to select or update photo">
+              <div class="hero-photo-spinning-glow"></div>
+              <div class="avatar-ring">
+                <img alt="Steev Thankachan Portrait" class="portfolio-photo hero-portrait-img" />
+              </div>
+              <span class="verified-badge">✔ Verified</span>
+            </div>
+
+            <button type="button" class="photo-upload-btn" id="photoUploadBtn" onclick="document.getElementById('photoInput').click()">
+              📸 Click Here to Link Photo
+            </button>
+
+            <h2 style="font-size: 1.5rem; font-weight: 900;">Steev Thankachan</h2>
+            <p style="font-size: 0.86rem; color: var(--cyan); font-weight: 700; margin-top: 4px;">
+              B.Tech CSE • Operations • MERN • Sales
+            </p>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin-top: 4px;">
+              📍 Calicut City, Kerala, India
+            </p>
+
+            <div class="floating-tags">
+              <span class="mini-tag">🏨 Hotel Ops</span>
+              <span class="mini-tag">⚛️ React & Node</span>
+              <span class="mini-tag">📈 B2B/B2C Sales</span>
+              <span class="mini-tag">🧪 QA Testing</span>
+              <span class="mini-tag">✍️ Academic Writing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANIMATED COUNTER STATS -->
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="6">0</span>+</div>
+        <div class="stat-label">Corporate Career Roles (2022–2026)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="5">0</span>+</div>
+        <div class="stat-label">Freelance & Logistics Engagements</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="95.56">0</span>%</div>
+        <div class="stat-label">Academic Distinction (SSLC Score)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="4">0</span></div>
+        <div class="stat-label">Languages Spoken (EN, ML, HI, TA)</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- INFINITE GLOWING MARQUEE TICKER -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="marquee-dot"></span> RK RESIDENCY (HOTEL MANAGER)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> SBI CREDIT CARD DIVISION (SALES & KYC)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> CYBERSQUARE (MERN STACK DEVELOPER)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> KONFIX (SALES & OFFICE ADMIN)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> SMARTLINK TELECOMMUNICATION (B2B BDE)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> KNOVEX (ACADEMIC CONTENT WRITER)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> POONCHOLA TECHNOLOGIES (REACT JS)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> FREELANCE QA SOFTWARE TESTER</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> SWIGGY & PORTER LOGISTICS PARTNER</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> RK RESIDENCY (HOTEL MANAGER)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> SBI CREDIT CARD DIVISION (SALES & KYC)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> CYBERSQUARE (MERN STACK DEVELOPER)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> KONFIX (SALES & OFFICE ADMIN)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> SMARTLINK TELECOMMUNICATION (B2B BDE)</span>
+      <span class="marquee-item"><span class="marquee-dot"></span> KNOVEX (ACADEMIC CONTENT WRITER)</span>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- CORE PRACTICE AREAS -->
+    <section id="domains" class="reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">What I Do Best</span>
+        <h2 class="section-title">Four High-Impact <span class="gradient-text">Practice Pillars</span></h2>
+        <p class="section-sub">Combining leadership, full-stack engineering, revenue generation, and precision research.</p>
+      </div>
+
+      <div class="flex-grid-2">
+        <div class="tilt-card accent-violet">
+          <div>
+            <div class="icon-badge bg-grad-1">🏨</div>
+            <h3 class="card-title">Operations & Hospitality Leadership</h3>
+            <p class="card-text">
+              Directing end-to-end hotel operations, front-desk management, staff scheduling, inventory procurement, vendor negotiations, invoicing, and resolving complex customer escalations to drive repeat corporate bookings.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">RK Residency (2025–Present)</span>
+            <span class="chip">KONFIX Administration</span>
+            <span class="chip">Vendor & Cost Control</span>
+          </div>
+        </div>
+
+        <div class="tilt-card accent-cyan">
+          <div>
+            <div class="icon-badge bg-grad-2">💻</div>
+            <h3 class="card-title">Full-Stack Web Dev (MERN) & QA</h3>
+            <p class="card-text">
+              Architecting responsive full-stack web apps using MongoDB, Express.js, React.js, and Node.js. Engineering secure RESTful APIs, managing Agile Git/GitHub workflows, and executing manual & automated software testing.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">CyberSquare (MERN)</span>
+            <span class="chip">Poonchola Technologies (React.js)</span>
+            <span class="chip">Freelance QA Testing</span>
+          </div>
+        </div>
+
+        <div class="tilt-card accent-amber">
+          <div>
+            <div class="icon-badge bg-grad-3">📈</div>
+            <h3 class="card-title">B2B/B2C Sales & Financial KYC</h3>
+            <p class="card-text">
+              High-volume outbound prospecting, enterprise telecom negotiations, customized credit card cross-selling, and meticulous KYC document verification with zero compliance errors and rapid approval turnarounds.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">SBI Credit Card Division</span>
+            <span class="chip">Smartlink Telecommunication</span>
+            <span class="chip">KONFIX Sales</span>
+          </div>
+        </div>
+
+        <div class="tilt-card accent-pink">
+          <div>
+            <div class="icon-badge bg-grad-4">✒️</div>
+            <h3 class="card-title">Academic Writing, Branding & Logistics</h3>
+            <p class="card-text">
+              Authoring zero-plagiarism research papers and technical reports (APA, MLA, Harvard, Chicago), designing bespoke brand logos and social media campaigns, and managing time-critical B2B/B2C urban logistics.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">KNOVEX Academic Writer</span>
+            <span class="chip">Logo & Social Media Strategy</span>
+            <span class="chip">Swiggy & Porter Partner</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORPORATE WORK EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">Career Timeline</span>
+        <h2 class="section-title">Work & <span class="gradient-text">Job Experience</span></h2>
+        <p class="section-sub">Click any category below to filter my corporate roles in Calicut, Kerala, India.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">✨ All Roles (6)</button>
+        <button class="filter-btn" data-filter="ops">🏨 Operations & Admin</button>
+        <button class="filter-btn" data-filter="tech">⚛️ MERN & Tech</button>
+        <button class="filter-btn" data-filter="sales">💼 Sales & B2B/B2C</button>
+        <button class="filter-btn" data-filter="writing">📚 Academic Writing</button>
+      </div>
+
+      <div class="exp-stack">
+        <!-- Role 1 -->
+        <article class="tilt-card exp-item accent-emerald" data-cat="ops">
+          <div class="exp-meta">
+            <span class="year-badge current">● 2025 – Present (Currently Working)</span>
+            <span class="chip">📍 Calicut, Kerala, India</span>
+          </div>
+          <h3 class="role-heading">Hotel Manager — <span class="company-highlight">RK Residency</span></h3>
+          <ul class="bullet-list">
+            <li>Directs end-to-end hotel operations, front-desk management, and guest relations to maintain high occupancy rates and deliver exceptional, consistent service quality.</li>
+            <li>Takes charge of staff scheduling, inventory procurement, and vendor negotiations, minimizing operational overhead while strictly upholding brand standards.</li>
+            <li>Acts as the primary point of contact for complex customer escalations, resolving issues promptly and tactfully to boost positive guest reviews and drive repeat corporate bookings.</li>
+          </ul>
+        </article>
+
+        <!-- Role 2 -->
+        <article class="tilt-card exp-item accent-amber" data-cat="sales">
+          <div class="exp-meta">
+            <span class="year-badge">2025</span>
+            <span class="chip">📍 Calicut, Kerala, India</span>
+          </div>
+          <h3 class="role-heading">Credit Card Sales Agent — <span class="company-highlight">SBI Credit Card Division</span></h3>
+          <ul class="bullet-list">
+            <li>Aggressively prospected high-potential clients and cross-sold customized credit card products, consistently meeting and exceeding assigned monthly acquisition targets.</li>
+            <li>Meticulously conducted preliminary document verification and KYC checks, ensuring zero compliance errors and significantly accelerating application approval turnaround times.</li>
+            <li>Cultivated strong customer rapport through transparent communication regarding fee structures, rewards programs, and financial terms, minimizing first-year attrition and building lasting client trust.</li>
+          </ul>
+        </article>
+
+        <!-- Role 3 -->
+        <article class="tilt-card exp-item accent-cyan" data-cat="tech">
+          <div class="exp-meta">
+            <span class="year-badge">2024</span>
+            <span class="chip">📍 Calicut, Kerala, India</span>
+          </div>
+          <h3 class="role-heading">MERN Stack Developer — <span class="company-highlight">CyberSquare</span></h3>
+          <ul class="bullet-list">
+            <li>Architected and deployed dynamic full-stack web applications utilizing MongoDB, Express.js, React.js, and Node.js to guarantee high performance, seamless responsiveness, and clean code standards.</li>
+            <li>Engineered secure, RESTful APIs and implemented robust state management workflows to streamline data synchronization between Frontend user interfaces and Backend databases.</li>
+            <li>Collaborated within an Agile environment, leveraging Git and GitHub for precise version control while actively participating in code reviews, debugging, and sprint planning to deliver complex projects strictly on schedule.</li>
+          </ul>
+        </article>
+
+        <!-- Role 4 -->
+        <article class="tilt-card exp-item accent-violet" data-cat="ops sales">
+          <div class="exp-meta">
+            <span class="year-badge">2023</span>
+            <span class="chip">📍 Calicut, Kerala, India</span>
+          </div>
+          <h3 class="role-heading">Sales Executive & Office Administrator — <span class="company-highlight">KONFIX</span></h3>
+          <ul class="bullet-list">
+            <li>Drove both B2B and B2C sales conversions by strategically identifying client requirements, preparing highly competitive proposals, and closing vital service contracts.</li>
+            <li>Streamlined core office administration workflows, optimizing daily invoicing, client records management, and cross-departmental communication.</li>
+            <li>Meticulously monitored payment collections and addressed post-sales client queries, significantly reducing billing discrepancies and maintaining high client retention rates.</li>
+          </ul>
+        </article>
+
+        <!-- Role 5 -->
+        <article class="tilt-card exp-item accent-pink" data-cat="sales">
+          <div class="exp-meta">
+            <span class="year-badge">2023</span>
+            <span class="chip">📍 Calicut, Kerala, India</span>
+          </div>
+          <h3 class="role-heading">Business Development Executive — <span class="company-highlight">Smartlink Telecommunication</span></h3>
+          <ul class="bullet-list">
+            <li>Identified and captured lucrative new regional market opportunities for telecom products and corporate connectivity solutions through structured, high-volume outbound prospecting.</li>
+            <li>Delivered persuasive product pitches and negotiated high-value terms with enterprise clients, building a dependable sales pipeline that accelerated quarterly revenue growth.</li>
+            <li>Continuously monitored market trends and competitor strategies to refine sales approaches and improve overall lead-to-deal conversion ratios.</li>
+          </ul>
+        </article>
+
+        <!-- Role 6 -->
+        <article class="tilt-card exp-item accent-cyan" data-cat="writing">
+          <div class="exp-meta">
+            <span class="year-badge">2022</span>
+            <span class="chip">📍 Calicut, Kerala, India</span>
+          </div>
+          <h3 class="role-heading">Academic Content Writer — <span class="company-highlight">KNOVEX</span></h3>
+          <ul class="bullet-list">
+            <li>Researched, structured, and authored comprehensive academic papers, in-depth case studies, and complex technical reports across a wide range of disciplines under rigorous delivery deadlines.</li>
+            <li>Guaranteed absolute adherence to complex academic referencing formats including APA, MLA, Harvard, and Chicago while maintaining strict originality benchmarks and a flawless zero-plagiarism record.</li>
+            <li>Synthesized complex academic literature into clear, powerfully argued deliverables that consistently met elite client quality standards and top-tier grading rubrics on the very first submission.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FREELANCE & GIG PORTFOLIO (TILL 2026) -->
+    <section id="freelance" class="reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">Independent Consulting & Field Operations</span>
+        <h2 class="section-title">Freelance & <span class="gradient-text">Logistics Portfolio (Till 2026)</span></h2>
+        <p class="section-sub">Delivering software quality assurance, publication-grade research, brand identity design, and precision logistics.</p>
+      </div>
+
+      <div class="flex-grid-3" style="margin-bottom: 1.5rem;">
+        <div class="tilt-card accent-emerald">
+          <div>
+            <div class="icon-badge bg-grad-2">🐞</div>
+            <h3 class="card-title">Freelance Software Tester</h3>
+            <p class="card-text">
+              Executed rigorous manual and automated testing protocols across web and mobile apps for multiple IT firms. Designed comprehensive test cases, tracked bugs, and validated cross-browser compatibility, UI/UX consistency, and system performance to minimize post-launch critical errors.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Manual & Automated QA</span>
+          </div>
+        </div>
+
+        <div class="tilt-card accent-violet">
+          <div>
+            <div class="icon-badge bg-grad-1">📑</div>
+            <h3 class="card-title">Freelance Academic Writer</h3>
+            <p class="card-text">
+              Managed end-to-end research and high-volume academic and technical writing deliverables across varied disciplines. Maintained strict adherence to institutional guidelines, advanced referencing styles, and zero-plagiarism standards under demanding deadlines.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Zero-Plagiarism Research</span>
+          </div>
+        </div>
+
+        <div class="tilt-card accent-pink">
+          <div>
+            <div class="icon-badge bg-grad-3">🎨</div>
+            <h3 class="card-title">Logo & Social Media Strategy</h3>
+            <p class="card-text">
+              Conceptualized bespoke brand identities, logos, and vector assets tailored to target demographics. Strategized and executed dynamic social media campaigns across platforms to boost organic engagement, brand awareness, and follower growth.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Brand Identity & Growth</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-grid-2">
+        <div class="tilt-card accent-amber">
+          <div class="exp-meta">
+            <span class="year-badge">B2C Urban Logistics Partner</span>
+            <span class="chip">🛵 Swiggy</span>
+          </div>
+          <h3 class="card-title">Delivery Partner — Swiggy</h3>
+          <p class="card-text" style="margin-bottom: 0;">
+            Managed high-volume food and grocery logistics across dynamic urban routes using real-time GPS navigation and algorithmic app routing. Minimized transit times while ensuring total order accuracy, product safety, and superior customer satisfaction ratings during peak hours.
+          </p>
+        </div>
+
+        <div class="tilt-card accent-cyan">
+          <div class="exp-meta">
+            <span class="year-badge">B2B & B2C Last-Mile Partner</span>
+            <span class="chip">📦 PORTER</span>
+          </div>
+          <h3 class="card-title">Delivery Agent — PORTER</h3>
+          <p class="card-text" style="margin-bottom: 0;">
+            Facilitated critical B2B and B2C last-mile logistics, managing the safe, timely transportation of commercial packages and personal goods. Strategically planned multi-stop routes, handled delicate cargo securely, and provided real-time transit updates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & ANIMATED METERS -->
+    <section id="skills" class="reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">Technical & Administrative Mastery</span>
+        <h2 class="section-title">Skills & <span class="gradient-text">Digital Toolkit</span></h2>
+        <p class="section-sub">Full-stack development, QA workflows, enterprise office suites, and multilingual fluency.</p>
+      </div>
+
+      <div class="flex-grid-2">
+        <!-- Animated Skill Bars -->
+        <div class="tilt-card accent-violet">
+          <h3 class="card-title" style="margin-bottom: 1.4rem;">⚡ Core Competency Meters</h3>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-top"><span>Hospitality, Operations & Office Administration</span><span>98%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="98%"></div></div>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-top"><span>MERN Stack (MongoDB, Express, React.js, Node.js)</span><span>92%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="92%"></div></div>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-top"><span>Manual & Automated Software QA Testing</span><span>94%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="94%"></div></div>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-top"><span>B2B/B2C Sales, Prospecting & KYC Verification</span><span>96%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="96%"></div></div>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-top"><span>Academic & Technical Writing (APA, MLA, Harvard, Chicago)</span><span>99%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="99%"></div></div>
+          </div>
+
+          <div class="skill-bar-wrap" style="margin-bottom: 0;">
+            <div class="skill-bar-top"><span>MS Office (Word, Excel, PowerPoint) & Google Workspace</span><span>97%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="97%"></div></div>
+          </div>
+        </div>
+
+        <!-- Detailed Toolkit Breakdown -->
+        <div class="tilt-card accent-cyan">
+          <h3 class="card-title" style="margin-bottom: 1rem;">🛠️ Software, Admin & Documentation</h3>
+          <ul class="bullet-list">
+            <li><strong>Microsoft Word:</strong> Advanced document formatting, custom templates, and complex academic referencing (APA, MLA, Harvard, Chicago).</li>
+            <li><strong>Microsoft Excel:</strong> Spreadsheet management, data entry, invoicing, tracking word counts & payment collections, and formulas.</li>
+            <li><strong>Microsoft PowerPoint:</strong> Designing persuasive presentations for sales pitches and business development.</li>
+            <li><strong>Google Workspace:</strong> Real-time collaboration and cloud storage across Google Docs, Sheets, and Drive.</li>
+            <li><strong>Administration & CRM:</strong> High-accuracy data entry, internal CRM/database navigation for KYC verification, and Outlook/Gmail management.</li>
+            <li><strong>Documentation & Research:</strong> Markdown structuring, PDF creation/conversion (certificates, proposals), and advanced internet/market research.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & LANGUAGES -->
+    <section id="education" class="reveal">
+      <div class="section-head">
+        <span class="section-eyebrow">Academic Foundation & Languages</span>
+        <h2 class="section-title">Education, Training & <span class="gradient-text">Multilingual Matrix</span></h2>
+      </div>
+
+      <!-- Featured IT Course & Internship Banner -->
+      <div class="tilt-card accent-pink" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(6, 182, 212, 0.14));">
+        <div class="exp-meta">
+          <span class="year-badge">IT Course & React JS Internship</span>
+          <span class="chip">🗓️ 01/08/2022 – 31/01/2023</span>
+        </div>
+        <h3 class="role-heading" style="margin-bottom: 0.35rem;">
+          Front End Development Course & React JS Internship — <span class="company-highlight">Poonchola Technologies</span>
+        </h3>
+        <p class="card-text" style="margin-bottom: 0;">
+          Completed intensive Front-End Development training paired with a practical React.js internship building responsive, component-driven web interfaces.
+        </p>
+      </div>
+
+      <!-- 4 Academic Cards in a Clean Responsive Flex Row -->
+      <div class="flex-grid-4" style="margin-bottom: 1.5rem;">
+        <div class="tilt-card accent-violet">
+          <span class="year-badge" style="margin-bottom: 0.75rem;">2022 • 70.31%</span>
+          <h4 style="font-size: 1.1rem; font-weight: 800;">Degree in Computer Science Engineering</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 6px;">Bachelor's Degree • Passed with 70.31%</p>
+        </div>
+
+        <div class="tilt-card accent-cyan">
+          <span class="year-badge" style="margin-bottom: 0.75rem;">2018 • Cert: 1017068</span>
+          <h4 style="font-size: 1.1rem; font-weight: 800;">Diploma in Computer Applications (DCA)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 6px;">Government ITI, Calicut</p>
+        </div>
+
+        <div class="tilt-card accent-amber">
+          <span class="year-badge" style="margin-bottom: 0.75rem;">2016 • 66.75%</span>
+          <h4 style="font-size: 1.1rem; font-weight: 800;">Higher Secondary (+2)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 6px;">St. Josephs Boys Higher Secondary School, Calicut</p>
+        </div>
+
+        <div class="tilt-card accent-emerald">
+          <span class="year-badge current" style="margin-bottom: 0.75rem;">2014 • 95.56%</span>
+          <h4 style="font-size: 1.1rem; font-weight: 800;">SSLC</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 6px;">Presentation Higher Secondary School, Calicut</p>
+        </div>
+      </div>
+
+      <!-- Languages Card -->
+      <div class="tilt-card accent-emerald">
+        <h3 class="card-title" style="margin-bottom: 1.25rem;">🌍 Multilingual Proficiency Matrix</h3>
+        <div class="flex-grid-2" style="gap: 1.25rem;">
+          <div style="flex: 1 1 260px; min-width: 0;">
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-top"><span>English</span><span style="color: var(--cyan);">Read • Speak • Write</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="100%"></div></div>
+            </div>
+            <div class="skill-bar-wrap" style="margin-bottom: 0;">
+              <div class="skill-bar-top"><span>Malayalam</span><span style="color: var(--emerald);">Read • Speak • Write</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="100%"></div></div>
+            </div>
+          </div>
+
+          <div style="flex: 1 1 260px; min-width: 0;">
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-top"><span>Hindi</span><span style="color: var(--amber);">Read • Speak • Write</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="95%"></div></div>
+            </div>
+            <div class="skill-bar-wrap" style="margin-bottom: 0;">
+              <div class="skill-bar-top"><span>Tamil</span><span style="color: var(--pink);">Speak</span></div>
+              <div class="skill-track"><div class="skill-fill" data-width="80%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION WITH EXECUTIVE PORTRAIT SIGN-OFF -->
+    <section id="contact" class="reveal">
+      <div class="tilt-card accent-pink">
+        <div class="contact-header-flex">
+          <div class="contact-avatar-ring" onclick="document.getElementById('photoInput').click()" title="Click to change photo">
+            <img alt="Steev Thankachan" class="portfolio-photo contact-avatar-img" />
+          </div>
+          <div style="flex: 1 1 300px; min-width: 0;">
+            <span class="section-eyebrow">Direct Executive Contact</span>
+            <h2 class="section-title">Ready to Elevate Your <span class="gradient-text">Team & Operations?</span></h2>
+            <p class="section-sub">Reach out directly for leadership roles in Operations & Hospitality, Full-Stack/QA Engineering, B2B/B2C Sales, and Consulting.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <a href="tel:+919074896525" class="contact-box">
+            <span style="font-size: 1.5rem;">📞</span>
+            <span style="font-size: 0.76rem; color: var(--text-dim); font-weight: 700;">PHONE NUMBERS</span>
+            <strong style="font-size: 0.98rem;">+91 9074896525</strong>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">+91 9495248414</span>
+          </a>
+
+          <button type="button" onclick="copyEmail()" class="contact-box">
+            <span style="font-size: 1.5rem;">✉️</span>
+            <span style="font-size: 0.76rem; color: var(--cyan); font-weight: 700;" id="copyStatus">CLICK TO COPY EMAIL</span>
+            <strong style="font-size: 0.88rem;">steevofficialwork1998@gmail.com</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Instant Clipboard Copy</span>
+          </button>
+
+          <a href="https://linkedin.com/in/steev-thankachan" target="_blank" rel="noopener" class="contact-box">
+            <span style="font-size: 1.5rem;">🌐</span>
+            <span style="font-size: 0.76rem; color: var(--text-dim); font-weight: 700;">LINKEDIN</span>
+            <strong style="font-size: 0.95rem;">in/steev-thankachan</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Connect Professionally</span>
+          </a>
+
+          <div class="contact-box">
+            <span style="font-size: 1.5rem;">📍</span>
+            <span style="font-size: 0.76rem; color: var(--text-dim); font-weight: 700;">LOCATION</span>
+            <strong style="font-size: 0.98rem;">Calicut City, India</strong>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Kerala • Open to Opportunities</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <strong>Steev Thankachan</strong> • Crafted with Responsive Flexbox & 3D Canvas Motion • Calicut City, India</p>
+  </footer>
+
+  <!-- ALL ANIMATION, RESPONSIVE MENU & PRODUCTION PHOTO ENGINES -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 1. Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNavDrawer.classList.remove('open');
+        mobileMenuBtn.textContent = '☰';
+      });
+    });
+
+    // 2. Production Photo Auto-Detector & Compressor
+    const photoElements = document.querySelectorAll('.portfolio-photo');
+    const photoInput = document.getElementById('photoInput');
+    const photoUploadBtn = document.getElementById('photoUploadBtn');
+
+    function triggerPhotoPicker(e) {
+      e.preventDefault();
+      photoInput.click();
+    }
+
+    const fallbackAvatar = "data:image/svg+xml;utf8," + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8b5cf6"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#g)"/>
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="Outfit, sans-serif" font-size="72" font-weight="900">ST</text>
+      </svg>
+    `);
+
+    function applyPhotoToAll(srcUrl, isRealPhoto) {
+      photoElements.forEach(img => { img.src = srcUrl; });
+      if (isRealPhoto && photoUploadBtn) {
+        // Automatically hide the upload helper button once the photo is loaded for a clean executive look
+        photoUploadBtn.style.display = 'none';
+      }
+    }
+
+    // Check local folder files first (works on live web servers and locally)
+    const candidateNames = [
+      "profile.jpg",
+      "profile.jpeg",
+      "profile.png",
+      "profile.webp",
+      "My Professional Photo.jpg",
+      "My Professional Photo.jpeg",
+      "My Professional Photo.png",
+      "My Professional Photo.jfif",
+      "My Professional Photo.webp",
+      "My Professional Photo.JPG",
+      "My Professional Photo.JPEG",
+      "My Professional Photo.PNG",
+      "My Professional Photo.jpg.jpg",
+      "My Professional Photo.jpg.jpeg",
+      "My Professional Photo.jpg.png",
+      "My Professional Photo"
+    ];
+
+    const savedPhoto = localStorage.getItem('steev_portfolio_photo_v2');
+    if (savedPhoto) {
+      applyPhotoToAll(savedPhoto, true);
+    } else {
+      applyPhotoToAll(fallbackAvatar, false);
+    }
+
+    let matchedFile = false;
+    candidateNames.forEach(fileName => {
+      const probe = new Image();
+      probe.onload = () => {
+        if (!matchedFile) {
+          matchedFile = true;
+          applyPhotoToAll(fileName, true);
+        }
+      };
+      probe.src = fileName;
+    });
+
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const instantUrl = URL.createObjectURL(file);
+      applyPhotoToAll(instantUrl, true);
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const tempImg = new Image();
+        tempImg.onload = () => {
+          const canvas = document.createElement('canvas');
+          const maxDim = 600;
+          let w = tempImg.width;
+          let h = tempImg.height;
+          if (w > h && w > maxDim) {
+            h = Math.round((h * maxDim) / w);
+            w = maxDim;
+          } else if (h >= w && h > maxDim) {
+            w = Math.round((w * maxDim) / h);
+            h = maxDim;
+          }
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(tempImg, 0, 0, w, h);
+          try {
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+            localStorage.setItem('steev_portfolio_photo_v2', compressedDataUrl);
+            applyPhotoToAll(compressedDataUrl, true);
+          } catch (err) {}
+        };
+        tempImg.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // 3. Theme Toggle
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      const isLight = document.body.classList.contains('light-theme');
+      themeIcon.textContent = isLight ? '🌙' : '☀️';
+      themeLabel.textContent = isLight ? 'Dark' : 'Light';
+    });
+
+    // 4. Dynamic Typewriter Role Rotator
+    const roles = [
+      "Hotel Manager @ RK Residency",
+      "Full-Stack MERN Developer",
+      "B2B & B2C Sales Strategist",
+      "Software QA & Automation Tester",
+      "Academic & Technical Content Writer",
+      "Brand & Social Media Designer"
+    ];
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typeEl = document.getElementById('typewriterText');
+
+    function runTypewriter() {
+      const currentRole = roles[roleIdx];
+      if (isDeleting) charIdx--;
+      else charIdx++;
+      typeEl.textContent = currentRole.substring(0, charIdx);
+
+      let speed = isDeleting ? 35 : 70;
+      if (!isDeleting && charIdx === currentRole.length) {
+        speed = 1800;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        speed = 350;
+      }
+      setTimeout(runTypewriter, speed);
+    }
+    runTypewriter();
+
+    // 5. Desktop-Only Cursor Glow & 3D Card Tilt (Safe for Mobile Touchscreens)
+    const isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (isDesktopPointer) {
+      const cursorGlow = document.getElementById('cursorGlow');
+      window.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+      });
+
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        });
+      });
+    }
+
+    // 6. Scroll Reveal + Animated Skill Bars + Animated Counters
+    const revealEls = document.querySelectorAll('.reveal');
+    const counters = document.querySelectorAll('.counter');
+    let countersStarted = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+            bar.style.width = bar.getAttribute('data-width');
+          });
+
+          if (!countersStarted && entry.target.classList.contains('stats-grid')) {
+            countersStarted = true;
+            counters.forEach(counter => {
+              const target = parseFloat(counter.getAttribute('data-target'));
+              const isDecimal = target % 1 !== 0;
+              const duration = 1600;
+              const startTime = performance.now();
+
+              function updateCounter(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const val = progress * target;
+                counter.textContent = isDecimal ? val.toFixed(2) : Math.floor(val);
+                if (progress < 1) requestAnimationFrame(updateCounter);
+                else counter.textContent = target;
+              }
+              requestAnimationFrame(updateCounter);
+            });
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // 7. Interactive Category Filter for Experience
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const expItems = document.querySelectorAll('.exp-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        expItems.forEach(item => {
+          const cats = item.getAttribute('data-cat');
+          if (filter === 'all' || cats.includes(filter)) {
+            item.style.display = 'flex';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 20);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(() => { item.style.display = 'none'; }, 250);
+          }
+        });
+      });
+    });
+
+    // 8. Copy Email Function
+    function copyEmail() {
+      navigator.clipboard.writeText('steevofficialwork1998@gmail.com');
+      const status = document.getElementById('copyStatus');
+      status.textContent = '✅ COPIED TO CLIPBOARD!';
+      status.style.color = '#10b981';
+      setTimeout(() => {
+        status.textContent = 'CLICK TO COPY EMAIL';
+        status.style.color = 'var(--cyan)';
+      }, 2500);
+    }
+
+    // 9. Interactive HTML5 Canvas Particle Constellation
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: null, y: null };
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    const colors = ['#ec4899', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b'];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.2 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.65;
+        this.speedY = (Math.random() - 0.5) * 0.65;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      const count = Math.min(Math.floor(window.innerWidth / 20), 70);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+    initParticles();
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 125) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(139, 92, 246, ${0.16 - dist / 780})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+
+        if (isDesktopPointer && mouse.x && mouse.y) {
+          const dx = particles[i].x - mouse.x;
+          const dy = particles[i].y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(6, 182, 212, ${0.32 - dist / 480})`;
+            ctx.lineWidth = 1.1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+</body>
+</html>
