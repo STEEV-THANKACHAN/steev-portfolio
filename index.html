@@ -7,6 +7,7 @@
   <meta property="og:title" content="Steev Thankachan | Executive & Technical Portfolio" />
   <meta property="og:description" content="Bridging Operations Leadership, Full-Stack MERN Engineering, Software QA, Strategic B2B/B2C Sales, and Technical Authorship." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.png" />
   <meta name="theme-color" content="#050511" />
   <title>Steev Thankachan | Executive & Technical Portfolio</title>
 
@@ -205,6 +206,14 @@
       text-overflow: ellipsis;
     }
 
+    /* Locked Portrait Styling */
+    .locked-photo {
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
     .nav-avatar-wrap {
       position: relative;
       width: 44px;
@@ -216,7 +225,6 @@
       animation: gradientShift 4s ease infinite;
       box-shadow: 0 0 18px rgba(236, 72, 153, 0.45);
       flex-shrink: 0;
-      cursor: pointer;
     }
 
     .nav-avatar-img {
@@ -576,10 +584,9 @@
 
     .hero-photo-container {
       position: relative;
-      width: 164px;
-      height: 164px;
-      margin: 0 auto 1rem;
-      cursor: pointer;
+      width: 168px;
+      height: 168px;
+      margin: 0 auto 1.15rem;
       flex-shrink: 0;
     }
 
@@ -613,11 +620,6 @@
       object-position: center top;
       background: #ffffff;
       display: block;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .hero-photo-container:hover .hero-portrait-img {
-      transform: scale(1.05);
     }
 
     .verified-badge {
@@ -639,35 +641,6 @@
 
     body.light-theme .verified-badge {
       border-color: #ffffff;
-    }
-
-    .photo-upload-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 99px;
-      font-size: 0.74rem;
-      font-weight: 800;
-      background: rgba(6, 182, 212, 0.16);
-      border: 1px solid rgba(6, 182, 212, 0.45);
-      color: #22d3ee;
-      cursor: pointer;
-      margin-bottom: 10px;
-      transition: all 0.25s ease;
-    }
-
-    body.light-theme .photo-upload-btn {
-      color: #0284c7;
-      background: rgba(6, 182, 212, 0.12);
-    }
-
-    .photo-upload-btn:hover {
-      background: var(--grad-rainbow);
-      color: #fff;
-      border-color: transparent;
-      transform: scale(1.04);
     }
 
     @keyframes spinSlow {
@@ -1138,7 +1111,6 @@
       animation: gradientShift 4s ease infinite;
       box-shadow: 0 10px 28px rgba(6, 182, 212, 0.4);
       flex-shrink: 0;
-      cursor: pointer;
     }
 
     .contact-avatar-img {
@@ -1257,7 +1229,7 @@
     }
 
     @media print {
-      header, #particleCanvas, .aurora-wrap, #cursorGlow, .filter-bar, .photo-upload-btn, .mobile-nav-drawer {
+      header, #particleCanvas, .aurora-wrap, #cursorGlow, .filter-bar, .mobile-nav-drawer {
         display: none !important;
       }
       body {
@@ -1273,9 +1245,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Hidden File Input so clicking the photo frame loads any image format regardless of size -->
-  <input type="file" id="photoInput" accept="image/*" style="display: none;" />
 
   <!-- Animated Aurora Mesh Blobs -->
   <div class="aurora-wrap">
@@ -1293,9 +1262,9 @@
   <!-- Sticky Navigation Bar -->
   <header>
     <div class="nav-container">
-      <a href="#" class="brand-logo" onclick="triggerPhotoPicker(event)" title="Click to set or change photo">
+      <a href="#" class="brand-logo">
         <div class="nav-avatar-wrap">
-          <img alt="Steev Thankachan" class="portfolio-photo nav-avatar-img" />
+          <img src="profile.png" alt="Steev Thankachan" draggable="false" oncontextmenu="return false;" class="portfolio-photo nav-avatar-img locked-photo" />
           <span class="nav-status-dot"></span>
         </div>
         <span>Steev Thankachan</span>
@@ -1366,21 +1335,17 @@
         </div>
       </div>
 
-      <!-- Animated 3D Identity Card with Executive Portrait -->
+      <!-- Animated 3D Identity Card with Locked Executive Portrait -->
       <div class="hero-visual">
         <div class="identity-orb-card tilt-card">
           <div class="identity-inner">
-            <div class="hero-photo-container" onclick="document.getElementById('photoInput').click()" title="Click to select or update photo">
+            <div class="hero-photo-container">
               <div class="hero-photo-spinning-glow"></div>
               <div class="avatar-ring">
-                <img alt="Steev Thankachan Portrait" class="portfolio-photo hero-portrait-img" />
+                <img src="profile.png" alt="Steev Thankachan Portrait" draggable="false" oncontextmenu="return false;" class="portfolio-photo hero-portrait-img locked-photo" />
               </div>
               <span class="verified-badge">✔ Verified</span>
             </div>
-
-            <button type="button" class="photo-upload-btn" id="photoUploadBtn" onclick="document.getElementById('photoInput').click()">
-              📸 Click Here to Link Photo
-            </button>
 
             <h2 style="font-size: 1.5rem; font-weight: 900;">Steev Thankachan</h2>
             <p style="font-size: 0.86rem; color: var(--cyan); font-weight: 700; margin-top: 4px;">
@@ -1831,12 +1796,12 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION WITH EXECUTIVE PORTRAIT SIGN-OFF -->
+    <!-- CONTACT SECTION WITH LOCKED EXECUTIVE PORTRAIT -->
     <section id="contact" class="reveal">
       <div class="tilt-card accent-pink">
         <div class="contact-header-flex">
-          <div class="contact-avatar-ring" onclick="document.getElementById('photoInput').click()" title="Click to change photo">
-            <img alt="Steev Thankachan" class="portfolio-photo contact-avatar-img" />
+          <div class="contact-avatar-ring">
+            <img src="profile.png" alt="Steev Thankachan" draggable="false" oncontextmenu="return false;" class="portfolio-photo contact-avatar-img locked-photo" />
           </div>
           <div style="flex: 1 1 300px; min-width: 0;">
             <span class="section-eyebrow">Direct Executive Contact</span>
@@ -1883,7 +1848,7 @@
     <p>© <span id="year"></span> <strong>Steev Thankachan</strong> • Calicut City, India</p>
   </footer>
 
-  <!-- ALL ANIMATION, RESPONSIVE MENU & PRODUCTION PHOTO ENGINES -->
+  <!-- ANIMATION & READ-ONLY PHOTO ENGINES -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1904,63 +1869,16 @@
       });
     });
 
-    // 2. Production Photo Auto-Detector & Compressor
+    // 2. Read-Only Locked Photo Resolver (Only loads Steev's hosted photo file)
     const photoElements = document.querySelectorAll('.portfolio-photo');
-    const photoInput = document.getElementById('photoInput');
-    const photoUploadBtn = document.getElementById('photoUploadBtn');
-
-    function triggerPhotoPicker(e) {
-      e.preventDefault();
-      photoInput.click();
-    }
-
-    const fallbackAvatar = "data:image/svg+xml;utf8," + encodeURIComponent(`
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-        <defs>
-          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#8b5cf6"/>
-            <stop offset="100%" stop-color="#06b6d4"/>
-          </linearGradient>
-        </defs>
-        <rect width="200" height="200" fill="url(#g)"/>
-        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="Outfit, sans-serif" font-size="72" font-weight="900">ST</text>
-      </svg>
-    `);
-
-    function applyPhotoToAll(srcUrl, isRealPhoto) {
-      photoElements.forEach(img => { img.src = srcUrl; });
-      if (isRealPhoto && photoUploadBtn) {
-        // Automatically hide the upload helper button once the photo is loaded for a clean executive look
-        photoUploadBtn.style.display = 'none';
-      }
-    }
-
-    // Check local folder files first (works on live web servers and locally)
     const candidateNames = [
+      "profile.png",
       "profile.jpg",
       "profile.jpeg",
-      "profile.png",
       "profile.webp",
       "My Professional Photo.jpg",
-      "My Professional Photo.jpeg",
-      "My Professional Photo.png",
-      "My Professional Photo.jfif",
-      "My Professional Photo.webp",
-      "My Professional Photo.JPG",
-      "My Professional Photo.JPEG",
-      "My Professional Photo.PNG",
-      "My Professional Photo.jpg.jpg",
-      "My Professional Photo.jpg.jpeg",
-      "My Professional Photo.jpg.png",
-      "My Professional Photo"
+      "My Professional Photo.png"
     ];
-
-    const savedPhoto = localStorage.getItem('steev_portfolio_photo_v2');
-    if (savedPhoto) {
-      applyPhotoToAll(savedPhoto, true);
-    } else {
-      applyPhotoToAll(fallbackAvatar, false);
-    }
 
     let matchedFile = false;
     candidateNames.forEach(fileName => {
@@ -1968,47 +1886,10 @@
       probe.onload = () => {
         if (!matchedFile) {
           matchedFile = true;
-          applyPhotoToAll(fileName, true);
+          photoElements.forEach(img => { img.src = fileName; });
         }
       };
       probe.src = fileName;
-    });
-
-    photoInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const instantUrl = URL.createObjectURL(file);
-      applyPhotoToAll(instantUrl, true);
-
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const tempImg = new Image();
-        tempImg.onload = () => {
-          const canvas = document.createElement('canvas');
-          const maxDim = 600;
-          let w = tempImg.width;
-          let h = tempImg.height;
-          if (w > h && w > maxDim) {
-            h = Math.round((h * maxDim) / w);
-            w = maxDim;
-          } else if (h >= w && h > maxDim) {
-            w = Math.round((w * maxDim) / h);
-            h = maxDim;
-          }
-          canvas.width = w;
-          canvas.height = h;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(tempImg, 0, 0, w, h);
-          try {
-            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.9);
-            localStorage.setItem('steev_portfolio_photo_v2', compressedDataUrl);
-            applyPhotoToAll(compressedDataUrl, true);
-          } catch (err) {}
-        };
-        tempImg.src = event.target.result;
-      };
-      reader.readAsDataURL(file);
     });
 
     // 3. Theme Toggle
